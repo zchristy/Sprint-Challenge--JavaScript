@@ -1,4 +1,4 @@
-// ==== Objects ====
+ console.log(`==== Objects ====`); 
 
 /*
   Given the following information about dinosaurs, create 3 objects:
@@ -52,7 +52,7 @@ console.log(ty.period);
 console.log(ty.roar());
 
 
-// ==== Arrays ====
+console.log(`==== Arrays ====`);
 
 // Given an array of college graduates.  Complete the following requests WITHOUT using any array methods like .forEach(), .map(), .reduce(), .filter()
 
@@ -99,7 +99,7 @@ for(let i = 0; i < graduates.length; i++){
 console.log(uni);
 
 
-// ==== ADVANCED Array Methods ====
+console.log(`==== ADVANCED Array Methods ====`);
 
 // Given this zoo data from around the United States, follow the instructions below.  Use the specific array methods in the requests below to solve the problems.
 
@@ -121,7 +121,7 @@ The zoo wants to display both the scientific name and the animal name in front o
 
 */
 const animalNames = [];
-zooAnimals.forEach(function(val) {
+zooAnimals.forEach( function(val) {
   animalNames.push(`Name: ${val.animal_name}, Scientific: ${val.scientific_name}.`)
 });
 console.log(animalNames);
@@ -163,3 +163,47 @@ console.log(populationTotal);
 Stretch: If you haven't already, convert your array method callbacks into arrow functions.
 
 */
+console.log(`==========================     ARRAY'S   ========================================`);
+console.log(`=======================     STRETCH START     ===================================`);
+console.log(`=================================================================================`);
+
+const animalNames2 = [];
+zooAnimals.forEach(val => {
+  animalNames2.push(`Name: ${val.animal_name}, Scientific: ${val.scientific_name}.`)
+});
+console.log(animalNames2);
+
+/* Request 2: .map()
+
+The zoos need a list of all their animal's names (names only, not scientific) converted to lower case.  Create a new array named lowerCase and map over each name to convert them all to lower case.  Log the resut.
+
+*/
+
+const lowerCase2 = zooAnimals.map(val => {
+  return val.animal_name.toLowerCase();
+});
+console.log(lowerCase2);
+
+/* Request 3: .filter()
+
+The zoos are concenred about animals with a lower population count. Find out which animals have a population less than 5.
+
+*/
+const largerPopulation2 = zooAnimals.filter(val => {
+  return val.population < 5;
+});
+console.log(largerPopulation2);
+
+/* Request 4: .reduce()
+
+The zoos need to know their total animal population across the United States.  Find the total population from all the zoos using the .reduce() method.
+
+*/
+const populationTotal2 = zooAnimals.reduce((acc, val) => {
+  return acc += val.population;
+}, 0);
+console.log(populationTotal2);
+
+console.log(`==========================     ARRAY'S   ========================================`);
+console.log(`=======================     STRETCH END     ===================================`);
+console.log(`=================================================================================`);
